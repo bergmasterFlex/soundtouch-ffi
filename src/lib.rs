@@ -338,16 +338,28 @@ mod root {
         #[derive(Debug)]
         pub struct SoundTouch {
             pub _base: root::soundtouch::FIFOProcessor,
+            /// Rate transposer class instance
             pub pRateTransposer: *mut root::RateTransposer,
+            /// Time-stretch class instance
             pub pTDStretch: *mut root::TDStretch,
+            /// Virtual rate parameter. Effective rate & tempo are calculated from these parameters.
             pub virtualRate: f64,
+            /// Virtual tempo parameter. Effective rate & tempo are calculated from these parameters.
             pub virtualTempo: f64,
+            /// Virtual pitch parameter. Effective rate & tempo are calculated from these parameters.
             pub virtualPitch: f64,
+            /// Flag: Has sample rate been set?
             pub bSrateSet: bool,
+            /// Accumulator for how many samples in total will be expected as output vs. samples put in,
+            /// considering current processing settings.
             pub samplesExpectedOut: f64,
+            /// Accumulator for how many samples in total have been read out from the processing so far
             pub samplesOutput: libc::c_long,
+            /// Number of channels
             pub channels: root::uint,
+            /// Effective `rate` value calculated from `virtualRate`, `virtualTempo` and `virtualPitch`
             pub rate: f64,
+            /// Effective `tempo` value calculated from `virtualRate`, `virtualTempo` and `virtualPitch`
             pub tempo: f64,
         }
         extern "C" {
@@ -560,11 +572,20 @@ mod root {
         #[derive(Debug)]
         pub struct FIFOSampleBuffer {
             pub _base: root::soundtouch::FIFOSamplePipe,
+            /// Sample buffer.
             pub buffer: *mut root::soundtouch::SAMPLETYPE,
+            /// Raw unaligned buffer memory. 'buffer' is made aligned by pointing it to first
+            /// 16-byte aligned location of this buffer
             pub bufferUnaligned: *mut root::soundtouch::SAMPLETYPE,
+            /// Sample buffer size in bytes
             pub sizeInBytes: root::uint,
+            /// How many samples are currently in buffer.
             pub samplesInBuffer: root::uint,
+            /// Channels, 1=mono, 2=stereo.
             pub channels: root::uint,
+            /// Current position pointer to the buffer. This pointer is increased when samples are 
+            /// removed from the pipe so that it's necessary to actually rewind buffer (move data)
+            /// only new data when is put to the pipe.
             pub bufferPos: root::uint,
         }
         extern "C" {
@@ -716,14 +737,24 @@ mod root {
         #[repr(C)]
         pub struct BPMDetect {
             pub vtable_: *const BPMDetect__bindgen_vtable,
+	        /// Auto-correlation accumulator bins.
             pub xcorr: *mut f32,
+            /// Sample average counter.
             pub decimateCount: libc::c_int,
+	        /// Sample average accumulator for FIFO-like decimation.
             pub decimateSum: root::soundtouch::LONG_SAMPLETYPE,
+            /// Decimate sound by this coefficient to reach approx. 500 Hz.
             pub decimateBy: libc::c_int,
+            /// Auto-correlation window length.
             pub windowLen: libc::c_int,
+            /// Number of channels (1 = mono, 2 = stereo).
             pub channels: libc::c_int,
+            /// Sample rate.
             pub sampleRate: libc::c_int,
+	        /// Beginning of auto-correlation window: Autocorrelation isn't being updated for
+            /// the first these many correlation bins.
             pub windowStart: libc::c_int,
+	        /// Window functions for data preconditioning.
             pub hamw: *mut f32,
             pub hamw2: *mut f32,
             pub pos: libc::c_int,
@@ -732,8 +763,11 @@ mod root {
             pub init_scaler: libc::c_int,
             pub peakVal: f32,
             pub beatcorr_ringbuff: *mut f32,
+	        /// FIFO-buffer for decimated processing samples.
             pub buffer: *mut root::soundtouch::FIFOSampleBuffer,
+	        /// Collection of detected beat positions
             pub beats: root::std::vector,
+            /// 2nd order low-pass-filter
             pub beat_lpf: root::soundtouch::IIR2_filter,
         }
         extern "C" {
