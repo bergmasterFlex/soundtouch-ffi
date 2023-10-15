@@ -10,3 +10,4 @@ This crate also includes other structs in the library such as `BPMDetect` and `F
 
 This is static only build with bundled version 2.3.2 (latest as of October 2023).
 
+If you're looking for a safe wrapper around these bindings I also made a crate for that: https://crates.io/crates/soundtouch.
