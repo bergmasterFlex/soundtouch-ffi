@@ -67,11 +67,6 @@ fn build() {
         .file(source_dir.join("sse_optimized.cpp"))
         .include(soundtouch_dir.join("include"))
         .include(soundtouch_dir.join("source/SoundTouch"))
-        // .define("TAKEHIRO_IEEE754_HACK", None)
-        // .define("FLOAT8", Some("float"))
-        // .define("REAL_IS_FLOAT", Some("1"))
-        // .define("BS_FORMAT", Some("BINARY"))
-        // .define("HAVE_CONFIG_H", None)
         .shared_flag(false)
         .pic(false)
         .warnings(false);
@@ -98,6 +93,8 @@ fn main() {
 #![allow(non_upper_case_globals)]
 #![allow(non_camel_case_types)]
 #![allow(non_snake_case)]
+
+pub use root::{soundtouch::*, TDStretch, uint};
 ";
 
     let mut out = PathBuf::new();
@@ -105,27 +102,30 @@ fn main() {
     out.push("lib.rs");
     let mut header = PathBuf::from("wrapper.hpp");
 
-    // let bindings = bindgen::Builder::default().header(header.display().to_string())
-    //                                           .raw_line(PREPEND_LIB)
-    //                                           // .parse_callbacks(Box::new(ParseCallbacks))
-    //                                           .generate_comments(false)
-    //                                           .layout_tests(false)
-    //                                           .ctypes_prefix("libc")
-    //                                           .constified_enum_module("*")
-    //                                           .allowlist_type("soundtouch::SoundTouch")
-    //                                           .allowlist_type("soundtouch::SAMPLETYPE")
-    //                                           .allowlist_type("soundtouch::BPMDetect")
-    //                                           .allowlist_function("soundtouch::SoundTouch::putSamples")
-    //                                           .allowlist_type("soundtouch::TDStretch")
-    //                                           .allowlist_type("soundtouch::RateTransposer")
-    //                                           .manually_drop_union(".*")
-    //                                           .default_non_copy_union_style(NonCopyUnionStyle::ManuallyDrop)
-    //                                           .use_core()
-    //                                           .enable_cxx_namespaces()
-    //                                           .generate()
-    //                                           .expect("Unable to generate bindings");
+    let bindings = bindgen::Builder::default().header(header.display().to_string())
+                                              .raw_line(PREPEND_LIB)
+                                              .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+                                              .generate_comments(false)
+                                              .layout_tests(false)
+                                              .ctypes_prefix("libc")
+                                              .constified_enum_module("*")
+                                              .allowlist_type("soundtouch::SoundTouch")
+                                              .allowlist_type("soundtouch::SAMPLETYPE")
+                                              .allowlist_type("soundtouch::BPMDetect")
+                                              .allowlist_function("soundtouch::SoundTouch::putSamples")
+                                              .allowlist_type("soundtouch::TDStretch")
+                                              .allowlist_type("soundtouch::RateTransposer")
+                                              .opaque_type("std::.*")
+                                              .manually_drop_union(".*")
+                                              .default_non_copy_union_style(bindgen::NonCopyUnionStyle::ManuallyDrop)
+                                              .use_core()
+                                              .enable_cxx_namespaces()
+                                              .trust_clang_mangling(true)
+                                              .clang_arg("-x").clang_arg("c++")
+                                              .generate()
+                                              .expect("Unable to generate bindings");
 
-    // bindings.write_to_file(out).expect("Couldn't write bindings!");
+    bindings.write_to_file(out).expect("Couldn't write bindings!");
 
     build();
 }
