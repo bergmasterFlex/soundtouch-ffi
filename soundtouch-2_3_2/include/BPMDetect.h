@@ -153,9 +153,9 @@ namespace soundtouch
 
         /// Calculates amplitude envelope for the buffer of samples.
         /// Result is output to 'samples'.
-        void calcEnvelope(soundtouch::SAMPLETYPE *samples,  ///< Pointer to input/output data buffer
-            int numsamples                    ///< Number of samples in buffer
-        );
+        ///void calcEnvelope(soundtouch::SAMPLETYPE *samples,  ///< Pointer to input/output data buffer
+        ///    int numsamples                    ///< Number of samples in buffer
+        ///);
 
         /// remove constant bias from xcorr data
         void removeBias();
