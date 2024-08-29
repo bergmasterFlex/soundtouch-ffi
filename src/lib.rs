@@ -13,69 +13,6 @@ pub use root::{soundtouch::*, TDStretch, uint};
 pub mod root {
     #[allow(unused_imports)]
     use self::super::root;
-    pub mod std {
-        #[allow(unused_imports)]
-        use self::super::super::root;
-        pub mod __detail {
-            #[allow(unused_imports)]
-            use self::super::super::super::root;
-        }
-        #[repr(C)]
-        #[derive(Debug, Copy, Clone)]
-        pub struct allocator {
-            pub _address: u8,
-        }
-        pub type allocator_value_type = u8;
-        pub type allocator_size_type = u64;
-        pub type allocator_difference_type = u64;
-        pub type allocator_pointer = u8;
-        pub type allocator_const_pointer = u8;
-        pub type allocator_reference = u8;
-        pub type allocator_const_reference = u8;
-        #[repr(C)]
-        #[derive(Debug, Copy, Clone)]
-        pub struct allocator_rebind {
-            pub _address: u8,
-        }
-        pub type allocator_rebind_other = u8;
-        pub type allocator_propagate_on_container_move_assignment = u8;
-        pub type allocator_is_always_equal = u8;
-        #[repr(C)]
-        #[derive(Debug, Copy, Clone)]
-        pub struct vector {
-            pub _address: u8,
-        }
-        pub type vector__Base = u8;
-        pub type vector__Tp_alloc_type = u8;
-        pub type vector__Alloc_traits = u8;
-        pub type vector_value_type = u8;
-        pub type vector_pointer = u8;
-        pub type vector_const_pointer = u8;
-        pub type vector_reference = u8;
-        pub type vector_const_reference = u8;
-        pub type vector_iterator = u8;
-        pub type vector_const_iterator = u8;
-        pub type vector_const_reverse_iterator = u8;
-        pub type vector_reverse_iterator = u8;
-        pub type vector_size_type = u64;
-        pub type vector_difference_type = u64;
-        pub type vector_allocator_type = u8;
-        #[repr(C)]
-        #[derive(Debug, Copy, Clone)]
-        pub struct vector__Temporary_value {
-            pub _address: u8,
-        }
-        #[repr(C)]
-        #[repr(align(1))]
-        #[derive(Copy, Clone)]
-        pub union vector__Temporary_value__Storage {
-            pub _bindgen_opaque_blob: u8,
-        }
-    }
-    pub mod __gnu_cxx {
-        #[allow(unused_imports)]
-        use self::super::super::root;
-    }
     pub type uint = libc::c_uint;
     pub mod soundtouch {
         #[allow(unused_imports)]
@@ -112,83 +49,83 @@ pub mod root {
             pub tempo: f64,
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch16getVersionStringEv"]
+            #[link_name = "\u{1}?getVersionString@SoundTouch@soundtouch@@SAPEBDXZ"]
             pub fn SoundTouch_getVersionString() -> *const libc::c_char;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch12getVersionIdEv"]
+            #[link_name = "\u{1}?getVersionId@SoundTouch@soundtouch@@SAIXZ"]
             pub fn SoundTouch_getVersionId() -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch7setRateEd"]
+            #[link_name = "\u{1}?setRate@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setRate(this: *mut root::soundtouch::SoundTouch, newRate: f64);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch8setTempoEd"]
+            #[link_name = "\u{1}?setTempo@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setTempo(this: *mut root::soundtouch::SoundTouch, newTempo: f64);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch13setRateChangeEd"]
+            #[link_name = "\u{1}?setRateChange@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setRateChange(this: *mut root::soundtouch::SoundTouch, newRate: f64);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch14setTempoChangeEd"]
+            #[link_name = "\u{1}?setTempoChange@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setTempoChange(
                 this: *mut root::soundtouch::SoundTouch,
                 newTempo: f64,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch8setPitchEd"]
+            #[link_name = "\u{1}?setPitch@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setPitch(this: *mut root::soundtouch::SoundTouch, newPitch: f64);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch15setPitchOctavesEd"]
+            #[link_name = "\u{1}?setPitchOctaves@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setPitchOctaves(
                 this: *mut root::soundtouch::SoundTouch,
                 newPitch: f64,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch17setPitchSemiTonesEi"]
+            #[link_name = "\u{1}?setPitchSemiTones@SoundTouch@soundtouch@@QEAAXH@Z"]
             pub fn SoundTouch_setPitchSemiTones(
                 this: *mut root::soundtouch::SoundTouch,
                 newPitch: libc::c_int,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch17setPitchSemiTonesEd"]
+            #[link_name = "\u{1}?setPitchSemiTones@SoundTouch@soundtouch@@QEAAXN@Z"]
             pub fn SoundTouch_setPitchSemiTones1(
                 this: *mut root::soundtouch::SoundTouch,
                 newPitch: f64,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch11setChannelsEj"]
+            #[link_name = "\u{1}?setChannels@SoundTouch@soundtouch@@QEAAXI@Z"]
             pub fn SoundTouch_setChannels(
                 this: *mut root::soundtouch::SoundTouch,
                 numChannels: root::uint,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch13setSampleRateEj"]
+            #[link_name = "\u{1}?setSampleRate@SoundTouch@soundtouch@@QEAAXI@Z"]
             pub fn SoundTouch_setSampleRate(
                 this: *mut root::soundtouch::SoundTouch,
                 srate: root::uint,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch25getInputOutputSampleRatioEv"]
+            #[link_name = "\u{1}?getInputOutputSampleRatio@SoundTouch@soundtouch@@QEAANXZ"]
             pub fn SoundTouch_getInputOutputSampleRatio(
                 this: *mut root::soundtouch::SoundTouch,
             ) -> f64;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch5flushEv"]
+            #[link_name = "\u{1}?flush@SoundTouch@soundtouch@@QEAAXXZ"]
             pub fn SoundTouch_flush(this: *mut root::soundtouch::SoundTouch);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch10setSettingEii"]
+            #[link_name = "\u{1}?setSetting@SoundTouch@soundtouch@@QEAA_NHH@Z"]
             pub fn SoundTouch_setSetting(
                 this: *mut root::soundtouch::SoundTouch,
                 settingId: libc::c_int,
@@ -196,14 +133,14 @@ pub mod root {
             ) -> bool;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZNK10soundtouch10SoundTouch10getSettingEi"]
+            #[link_name = "\u{1}?getSetting@SoundTouch@soundtouch@@QEBAHH@Z"]
             pub fn SoundTouch_getSetting(
                 this: *const root::soundtouch::SoundTouch,
                 settingId: libc::c_int,
             ) -> libc::c_int;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouchC1Ev"]
+            #[link_name = "\u{1}??0SoundTouch@soundtouch@@QEAA@XZ"]
             pub fn SoundTouch_SoundTouch(this: *mut root::soundtouch::SoundTouch);
         }
         impl SoundTouch {
@@ -283,11 +220,11 @@ pub mod root {
             }
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouchD1Ev"]
+            #[link_name = "\u{1}??_DSoundTouch@soundtouch@@QEAAXXZ"]
             pub fn SoundTouch_SoundTouch_destructor(this: *mut root::soundtouch::SoundTouch);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch10putSamplesEPKfj"]
+            #[link_name = "\u{1}?putSamples@SoundTouch@soundtouch@@UEAAXPEBMI@Z"]
             pub fn SoundTouch_putSamples(
                 this: *mut libc::c_void,
                 samples: *const root::soundtouch::SAMPLETYPE,
@@ -295,7 +232,7 @@ pub mod root {
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch14receiveSamplesEPfj"]
+            #[link_name = "\u{1}?receiveSamples@SoundTouch@soundtouch@@UEAAIPEAMI@Z"]
             pub fn SoundTouch_receiveSamples(
                 this: *mut libc::c_void,
                 output: *mut root::soundtouch::SAMPLETYPE,
@@ -303,18 +240,18 @@ pub mod root {
             ) -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch14receiveSamplesEj"]
+            #[link_name = "\u{1}?receiveSamples@SoundTouch@soundtouch@@UEAAII@Z"]
             pub fn SoundTouch_receiveSamples1(
                 this: *mut libc::c_void,
                 maxSamples: root::uint,
             ) -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch10SoundTouch5clearEv"]
+            #[link_name = "\u{1}?clear@SoundTouch@soundtouch@@UEAAXXZ"]
             pub fn SoundTouch_clear(this: *mut libc::c_void);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZNK10soundtouch10SoundTouch21numUnprocessedSamplesEv"]
+            #[link_name = "\u{1}?numUnprocessedSamples@SoundTouch@soundtouch@@UEBAIXZ"]
             pub fn SoundTouch_numUnprocessedSamples(this: *mut libc::c_void) -> root::uint;
         }
         #[repr(C)]
@@ -329,28 +266,28 @@ pub mod root {
             pub bufferPos: root::uint,
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer6ptrEndEj"]
+            #[link_name = "\u{1}?ptrEnd@FIFOSampleBuffer@soundtouch@@QEAAPEAMI@Z"]
             pub fn FIFOSampleBuffer_ptrEnd(
                 this: *mut root::soundtouch::FIFOSampleBuffer,
                 slackCapacity: root::uint,
             ) -> *mut root::soundtouch::SAMPLETYPE;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer11setChannelsEi"]
+            #[link_name = "\u{1}?setChannels@FIFOSampleBuffer@soundtouch@@QEAAXH@Z"]
             pub fn FIFOSampleBuffer_setChannels(
                 this: *mut root::soundtouch::FIFOSampleBuffer,
                 numChannels: libc::c_int,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer9addSilentEj"]
+            #[link_name = "\u{1}?addSilent@FIFOSampleBuffer@soundtouch@@QEAAXI@Z"]
             pub fn FIFOSampleBuffer_addSilent(
                 this: *mut root::soundtouch::FIFOSampleBuffer,
                 nSamples: root::uint,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBufferC1Ei"]
+            #[link_name = "\u{1}??0FIFOSampleBuffer@soundtouch@@QEAA@H@Z"]
             pub fn FIFOSampleBuffer_FIFOSampleBuffer(
                 this: *mut root::soundtouch::FIFOSampleBuffer,
                 numChannels: libc::c_int,
@@ -380,19 +317,19 @@ pub mod root {
             }
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBufferD1Ev"]
+            #[link_name = "\u{1}??_DFIFOSampleBuffer@soundtouch@@QEAAXXZ"]
             pub fn FIFOSampleBuffer_FIFOSampleBuffer_destructor(
                 this: *mut root::soundtouch::FIFOSampleBuffer,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer8ptrBeginEv"]
+            #[link_name = "\u{1}?ptrBegin@FIFOSampleBuffer@soundtouch@@UEAAPEAMXZ"]
             pub fn FIFOSampleBuffer_ptrBegin(
                 this: *mut libc::c_void,
             ) -> *mut root::soundtouch::SAMPLETYPE;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer10putSamplesEPKfj"]
+            #[link_name = "\u{1}?putSamples@FIFOSampleBuffer@soundtouch@@UEAAXPEBMI@Z"]
             pub fn FIFOSampleBuffer_putSamples(
                 this: *mut libc::c_void,
                 samples: *const root::soundtouch::SAMPLETYPE,
@@ -400,11 +337,11 @@ pub mod root {
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer10putSamplesEj"]
+            #[link_name = "\u{1}?putSamples@FIFOSampleBuffer@soundtouch@@UEAAXI@Z"]
             pub fn FIFOSampleBuffer_putSamples1(this: *mut libc::c_void, numSamples: root::uint);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer14receiveSamplesEPfj"]
+            #[link_name = "\u{1}?receiveSamples@FIFOSampleBuffer@soundtouch@@UEAAIPEAMI@Z"]
             pub fn FIFOSampleBuffer_receiveSamples(
                 this: *mut libc::c_void,
                 output: *mut root::soundtouch::SAMPLETYPE,
@@ -412,26 +349,26 @@ pub mod root {
             ) -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer14receiveSamplesEj"]
+            #[link_name = "\u{1}?receiveSamples@FIFOSampleBuffer@soundtouch@@UEAAII@Z"]
             pub fn FIFOSampleBuffer_receiveSamples1(
                 this: *mut libc::c_void,
                 maxSamples: root::uint,
             ) -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZNK10soundtouch16FIFOSampleBuffer10numSamplesEv"]
+            #[link_name = "\u{1}?numSamples@FIFOSampleBuffer@soundtouch@@UEBAIXZ"]
             pub fn FIFOSampleBuffer_numSamples(this: *mut libc::c_void) -> root::uint;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZNK10soundtouch16FIFOSampleBuffer7isEmptyEv"]
+            #[link_name = "\u{1}?isEmpty@FIFOSampleBuffer@soundtouch@@UEBAHXZ"]
             pub fn FIFOSampleBuffer_isEmpty(this: *mut libc::c_void) -> libc::c_int;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer5clearEv"]
+            #[link_name = "\u{1}?clear@FIFOSampleBuffer@soundtouch@@UEAAXXZ"]
             pub fn FIFOSampleBuffer_clear(this: *mut libc::c_void);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch16FIFOSampleBuffer21adjustAmountOfSamplesEj"]
+            #[link_name = "\u{1}?adjustAmountOfSamples@FIFOSampleBuffer@soundtouch@@UEAAII@Z"]
             pub fn FIFOSampleBuffer_adjustAmountOfSamples(
                 this: *mut libc::c_void,
                 numSamples: root::uint,
@@ -450,11 +387,11 @@ pub mod root {
             pub prev: [f64; 5usize],
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch11IIR2_filter6updateEf"]
+            #[link_name = "\u{1}?update@IIR2_filter@soundtouch@@QEAAMM@Z"]
             pub fn IIR2_filter_update(this: *mut root::soundtouch::IIR2_filter, x: f32) -> f32;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch11IIR2_filterC1EPKd"]
+            #[link_name = "\u{1}??0IIR2_filter@soundtouch@@QEAA@PEBN@Z"]
             pub fn IIR2_filter_IIR2_filter(
                 this: *mut root::soundtouch::IIR2_filter,
                 lpf_coeffs: *const f64,
@@ -499,14 +436,14 @@ pub mod root {
             pub beat_lpf: root::soundtouch::IIR2_filter,
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect11updateXCorrEi"]
+            #[link_name = "\u{1}?updateXCorr@BPMDetect@soundtouch@@IEAAXH@Z"]
             pub fn BPMDetect_updateXCorr(
                 this: *mut root::soundtouch::BPMDetect,
                 process_samples: libc::c_int,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect8decimateEPfPKfi"]
+            #[link_name = "\u{1}?decimate@BPMDetect@soundtouch@@IEAAHPEAMPEBMH@Z"]
             pub fn BPMDetect_decimate(
                 this: *mut root::soundtouch::BPMDetect,
                 dest: *mut root::soundtouch::SAMPLETYPE,
@@ -515,26 +452,18 @@ pub mod root {
             ) -> libc::c_int;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect12calcEnvelopeEPfi"]
-            pub fn BPMDetect_calcEnvelope(
-                this: *mut root::soundtouch::BPMDetect,
-                samples: *mut root::soundtouch::SAMPLETYPE,
-                numsamples: libc::c_int,
-            );
-        }
-        extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect10removeBiasEv"]
+            #[link_name = "\u{1}?removeBias@BPMDetect@soundtouch@@IEAAXXZ"]
             pub fn BPMDetect_removeBias(this: *mut root::soundtouch::BPMDetect);
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect13updateBeatPosEi"]
+            #[link_name = "\u{1}?updateBeatPos@BPMDetect@soundtouch@@IEAAXH@Z"]
             pub fn BPMDetect_updateBeatPos(
                 this: *mut root::soundtouch::BPMDetect,
                 process_samples: libc::c_int,
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect12inputSamplesEPKfi"]
+            #[link_name = "\u{1}?inputSamples@BPMDetect@soundtouch@@QEAAXPEBMH@Z"]
             pub fn BPMDetect_inputSamples(
                 this: *mut root::soundtouch::BPMDetect,
                 samples: *const root::soundtouch::SAMPLETYPE,
@@ -542,11 +471,11 @@ pub mod root {
             );
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect6getBpmEv"]
+            #[link_name = "\u{1}?getBpm@BPMDetect@soundtouch@@QEAAMXZ"]
             pub fn BPMDetect_getBpm(this: *mut root::soundtouch::BPMDetect) -> f32;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetect8getBeatsEPfS1_i"]
+            #[link_name = "\u{1}?getBeats@BPMDetect@soundtouch@@QEAAHPEAM0H@Z"]
             pub fn BPMDetect_getBeats(
                 this: *mut root::soundtouch::BPMDetect,
                 pos: *mut f32,
@@ -555,7 +484,7 @@ pub mod root {
             ) -> libc::c_int;
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetectC1Eii"]
+            #[link_name = "\u{1}??0BPMDetect@soundtouch@@QEAA@HH@Z"]
             pub fn BPMDetect_BPMDetect(
                 this: *mut root::soundtouch::BPMDetect,
                 numChannels: libc::c_int,
@@ -575,14 +504,6 @@ pub mod root {
                 numsamples: libc::c_int,
             ) -> libc::c_int {
                 BPMDetect_decimate(self, dest, src, numsamples)
-            }
-            #[inline]
-            pub unsafe fn calcEnvelope(
-                &mut self,
-                samples: *mut root::soundtouch::SAMPLETYPE,
-                numsamples: libc::c_int,
-            ) {
-                BPMDetect_calcEnvelope(self, samples, numsamples)
             }
             #[inline]
             pub unsafe fn removeBias(&mut self) {
@@ -621,9 +542,57 @@ pub mod root {
             }
         }
         extern "C" {
-            #[link_name = "\u{1}_ZN10soundtouch9BPMDetectD1Ev"]
+            #[link_name = "\u{1}??_DBPMDetect@soundtouch@@QEAAXXZ"]
             pub fn BPMDetect_BPMDetect_destructor(this: *mut root::soundtouch::BPMDetect);
         }
+    }
+    pub mod std {
+        #[allow(unused_imports)]
+        use self::super::super::root;
+        #[repr(C)]
+        #[derive(Debug, Copy, Clone)]
+        pub struct allocator {
+            pub _address: u8,
+        }
+        pub type allocator__From_primary = u8;
+        pub type allocator_value_type = u8;
+        pub type allocator_pointer = u8;
+        pub type allocator_const_pointer = u8;
+        pub type allocator_reference = u8;
+        pub type allocator_const_reference = u8;
+        pub type allocator_size_type = u64;
+        pub type allocator_difference_type = u64;
+        pub type allocator_propagate_on_container_move_assignment = u8;
+        pub type allocator_is_always_equal = u8;
+        #[repr(C)]
+        #[derive(Debug, Copy, Clone)]
+        pub struct allocator_rebind {
+            pub _address: u8,
+        }
+        pub type allocator_rebind_other = u8;
+        #[repr(C)]
+        #[derive(Debug, Copy, Clone)]
+        pub struct vector {
+            pub _address: u8,
+        }
+        pub type vector__Alty = u8;
+        pub type vector__Alty_traits = u8;
+        pub type vector_value_type = u8;
+        pub type vector_allocator_type = u8;
+        pub type vector_pointer = u8;
+        pub type vector_const_pointer = u8;
+        pub type vector_reference = u8;
+        pub type vector_const_reference = u8;
+        pub type vector_size_type = u8;
+        pub type vector_difference_type = u8;
+        pub type vector__Scary_val = u8;
+        pub type vector_iterator = u8;
+        pub type vector_const_iterator = u8;
+        pub type vector_reverse_iterator = u8;
+        pub type vector_const_reverse_iterator = u8;
+        pub const vector__Reallocation_policy__At_least: root::std::vector__Reallocation_policy = 0;
+        pub const vector__Reallocation_policy__Exactly: root::std::vector__Reallocation_policy = 0;
+        pub type vector__Reallocation_policy = libc::c_int;
     }
     #[repr(C)]
     #[derive(Debug, Copy, Clone)]
